@@ -419,7 +419,7 @@
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, $url);
 	curl_setopt($ch, CURLOPT_POST, 1);
-	//curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
 	//curl_setopt($this->ch, CURLOPT_COOKIEJAR, BASE_DIR . 'cookies/fembed~' . preg_replace('/[^A-Za-z0-9\-]/', '', $this->id) . '.txt');
 	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
@@ -440,13 +440,13 @@
 			$referer  = strtr($id, '/f/', '/v/');
 			$image    = $root . "/asset" . $response['player']['poster_file'];
 
-		/* 	$sources = '[';
+			$sources = '[';
 			foreach ($response['data'] as $dt) {
 				
 					$sources .= '{"label":"' . $dt['label'] . '", "type":"video\/mp4","file":"' . $dt['file'] . '"},';
 	
 			}
-			$sources .= ']'; */
+			$sources .= ']';
 			
 		}
 	}
@@ -454,7 +454,7 @@
 
 	//$sources = '[{"label":"480p","bitrate": "600", "type":"video\/mp4","file":"https://fvs.io/redirector?token=T2JQSjYyUzUyMDd2Y2dOdDBkUlUxZnNVUFJnaHBDeFhhV1VLN1NHdkJkSVU5VVVVaTZlbFRNUkg0dkN0c1p6OFhjcTlURGM5ZGFWaklRVWd3VW1GODJ0MWZLRldEUjVxb2J6VVNsWXpDYkdieUxTbWtETlFid096NjFSWWtqMjVyaGE3Zk1ZaTNtR3lEbXZiMmYzWTAwdFBZd2xLUUg1TWVwMD06QlY0ZXE4ckNHNVR5KzMxdmZBRGhWUT09m1r7"}]';
 
-	$sources = '[{"label":"480p", "type":"video\/mp4","file":"./api.php/?url=' . $link . '"}]';
+	//$sources = '[{"label":"480p", "type":"video\/mp4","file":"./api.php/?url=' . $link . '"}]';
 
 	$result = '<div id="bundlecodes"></div>';
 
